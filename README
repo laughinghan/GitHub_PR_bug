@@ -16,3 +16,20 @@ on master.
 This bug is exhibited in
 https://github.com/laughinghan/GitHub_PR_bug/pull/1
 as you read these very words.
+
+If you are experiencing this bug and stumbled onto this in between
+me creating this test case and emailing them and them fixing this,
+there's a workaround: find a way to git push -f the problem branch
+(the branch for which a PR lists too many commits). For example,
+you could git checkout the problem branch, and do:
+
+    git branch TEMP
+    git reset --hard HEAD^
+    git push -f
+    git merge TEMP
+    git branch -d TEMP
+    git push
+
+Unless you have a branch named TEMP, this should fix the issue and
+leave everything as it was before. (If you have a branch named TEMP
+and can't deal, ask an adult for help.)
