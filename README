@@ -1,0 +1,14 @@
+This repo is just a test case for a bug in GitHub Pull Requests.
+
+Normally, if branch A is 2 commits ahead of master, and branch B is
+2 commits ahead of A and hence 4 commits ahead of master, and you
+have a Pull Request to merge B into master, the PR will list all 4
+commits, but then if you merge A into master (and push), then the PR
+will do the right thing and update to show the only 2 commits that
+B is ahead of master.
+
+However, it appears that if the tip of B is timestamped after the
+commits in A that were merged and pushed to master (e.g. due to a
+rebase), then the PR to merge B into master will incorrectly
+continue to list all 4 commits, even though 2 of them are already
+on master.
