@@ -12,3 +12,7 @@ commits in A that were merged and pushed to master (e.g. due to a
 rebase), then the PR to merge B into master will incorrectly
 continue to list all 4 commits, even though 2 of them are already
 on master.
+
+This bug is exhibited in
+https://github.com/laughinghan/GitHub_PR_bug/pull/1
+as you read these very words.
